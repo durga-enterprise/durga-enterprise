@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Durga Enterprise | डुरगा एंटरप्राइज़</title>
+  <meta name="description" content="Durga Enterprise - Vapi based specialist in repairing & fabrication of Paper Packaging Machinery, Paper Mills & Textile Machinery, Chemical Machinery, Screw Barrels, Reactor Buffing & Plastic Mould Manufacture." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    header {
+      background: linear-gradient(135deg, #c62828, #8e0000);
+      color: #fff;
+      border-radius: 20px;
+      padding: 18px 20px 22px;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.22);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: rgba(253, 216, 53, 0.18);
+      border-radius: 50%;
+      top: -80px;
+      right: -70px;
+    }
+    .head-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      border: 2px solid rgba(255,255,255,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 22px;
+      background: rgba(0,0,0,0.18);
+      backdrop-filter: blur(6px);
+    }
+    .brand-text h1 {
+      font-size: 1.7rem;
+      letter-spacing: 0.06em;
+    }
+    .brand-text h1 span {
+      color: #ffeb3b;
+    }
+    .brand-text p {
+      font-size: 0.90rem;
+      opacity: 0.94;
+      margin-top: 2px;
+    }
+    .owner {
+      text-align: right;
+      font-size: 0.90rem;
+    }
+    .owner strong {
+      font-size: 1.02rem;
+    }
+    .owner p { opacity: 0.9; }
+    .head-bottom {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tagline {
+      font-size: 0.92rem;
+      max-width: 680px;
+    }
+    .tagline strong { color: #ffeb3b; }
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.7);
+      font-size: 0.86rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,0,0,0.18);
+      cursor: pointer;
+    }
+    .btn span.icon {
+      font-size: 1rem;
+    }
+
+    main {
+      margin-top: 18px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.25fr);
+      gap: 16px;
+    }
+    @media (max-width: 830px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .owner { text-align: left; }
+      header { padding-bottom: 20px; }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 14px 16px 16px;
+      box-shadow: 0 8px 18px rgba(15,23,42,0.08);
+      border: 1px solid #e5e7eb;
+    }
+    .card h2 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #b91c1c;
+    }
+    .badge {
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #fee2e2;
+      color: #b91c1c;
+      margin-left: 6px;
+    }
+    .card p, .card li {
+      font-size: 0.88rem;
+      color: #374151;
+    }
+    .list {
+      list-style: none;
+      margin-top: 6px;
+    }
+    .list li {
+      padding: 5px 0;
+      border-bottom: 1px dashed #e5e7eb;
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .list li:last-child { border-bottom: none; }
+    .list li span.bullet {
+      font-size: 0.7rem;
+      margin-top: 4px;
+      color: #b91c1c;
+    }
+
+    .chip-row {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .chip {
+      font-size: 0.76rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #f3f4ff;
+      border: 1px solid #e5e7eb;
+      color: #1f2937;
+    }
+
+    .contact-line {
+      font-size: 0.9rem;
+      margin: 4px 0;
+    }
+    .contact-label {
+      font-weight: 600;
+      color: #111827;
+    }
+    .contact-value {
+      color: #1d4ed8;
+      word-break: break-word;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #6b7280;
+      padding: 10px 0 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="head-top">
+        <div class="brand">
+          <div class="logo">DE</div>
+          <div class="brand-text">
+            <h1><span>DURGA</span> ENTERPRISE</h1>
+            <p>Repairing &amp; Fabrication • Paper / Textile / Chemical Machinery • Screw Barrels • Reactor Buffing • Plastic Mould</p>
+          </div>
+        </div>
+        <div class="owner">
+          <p>Proprietor</p>
+          <strong>Dinesh Singh Rajput</strong>
+        </div>
+      </div>
+      <div class="head-bottom">
+        <p class="tagline">
+          <strong>सर्विस एरिया:</strong>
+          पेपर पैकेजिंग मशीनरी, पेपर मिल्स, टेक्सटाइल मशीनरी, केमिकल मशीनरी,
+          स्क्रू बैरल्स, रिएक्टर बफिंग, प्लास्टिक मोल्ड मैन्युफैक्चर की
+          <strong>रेपेरिंग व फैब्रिकेशन</strong> के लिए एक ही नाम –
+          <strong>Durga Enterprise, चनोद – वापी</strong>.
+        </p>
+        <div class="quick-actions">
+          <a class="btn" href="tel:+919624732967"><span class="icon">📞</span> कॉल करें</a>
+          <a class="btn" href="https://wa.me/919624732967"><span class="icon">💬</span> WhatsApp पूछताछ</a>
+          <a class="btn" href="mailto:durgaenterprisedk@gmail.com"><span class="icon">✉️</span> ई‑मेल भेजें</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>हमारी विशेष सेवाएँ <span class="badge">Specialist</span></h2>
+        <ul class="list">
+          <li>
+            <span class="bullet">●</span>
+            <span>Paper Packaging Machinery की रेपेरिंग, ओवरहॉलिंग और फैब्रिकेशन</span>
+          </li>
+          <li>
+            <span class="bullet">●</span>
+            <span>Paper Mills &amp; Textile Machinery की मैकेनिकल सर्विस व मॉडिफिकेशन</span>
+          </li>
+          <li>
+            <span class="bullet">●</span>
+            <span>Chemical Machinery के पार्ट्स की रेपेरिंग, अलाइनमेंट व इंस्टॉलेशन</span>
+          </li>
+          <li>
+            <span class="bullet">●</span>
+            <span>Screw Barrels की मैन्युफैक्चरिंग / री‑कंडीशनिंग</span>
+          </li>
+          <li>
+            <span class="bullet">●</span>
+            <span>Reactor Buffing एवं पोलिशिंग व हेवी जॉब वर्क</span>
+          </li>
+          <li>
+            <span class="bullet">●</span>
+            <span>Plastic Mould Manufacture – नई मोल्ड डेवेलपमेंट व रिपेयर</span>
+          </li>
+        </ul>
+
+        <div class="chip-row">
+          <span class="chip">On‑Site Service</span>
+          <span class="chip">AMC / Contract Work</span>
+          <span class="chip">Emergency Breakdown Support</span>
+          <span class="chip">Custom Fabrication</span>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>संपर्क जानकारी</h2>
+        <p class="contact-line">
+          <span class="contact-label">मोबाइल / WhatsApp:</span><br />
+          <span class="contact-value">
+            <a href="tel:+919624732967">+91 96247 32967</a>, 
+            <a href="tel:+918469426188">+91 84694 26188</a>
+          </span>
+        </p>
+        <p class="contact-line">
+          <span class="contact-label">ई‑मेल:</span><br />
+          <span class="contact-value">
+            <a href="mailto:durgaenterprisedk@gmail.com">durgaenterprisedk@gmail.com</a>
+          </span>
+        </p>
+        <p class="contact-line">
+          <span class="contact-label">Regd. Office:</span><br />
+          Shop No.11, K.K. Compound,<br />
+          Near Chandralok Building,<br />
+          Silvassa Road, Chanod, Vapi – 396195.
+        </p>
+
+        <h2 style="margin-top:10px;">इंडस्ट्रीज़ जहाँ हम काम करते हैं</h2>
+        <div class="chip-row">
+          <span class="chip">Paper &amp; Packaging</span>
+          <span class="chip">Textile Units</span>
+          <span class="chip">Chemical Plants</span>
+          <span class="chip">Plastic Processing</span>
+          <span class="chip">Engineering Workshop</span>
+        </div>
+      </aside>
+    </main>
+
+    <section class="card">
+      <h2>क्यों चुनें Durga Enterprise?</h2>
+      <ul class="list">
+        <li><span class="bullet">●</span><span>अनुभवी टेक्निकल टीम और प्रैक्टिकल साइट‑नॉलेज</span></li>
+        <li><span class="bullet">●</span><span>कम से कम डाउन‑टाइम, तेज़ सर्विस रिस्पॉन्स</span></li>
+        <li><span class="bullet">●</span><span>कस्टम जॉब वर्क – आपकी मशीन के अनुसार डिजाइन व फैब्रिकेशन</span></li>
+        <li><span class="bullet">●</span><span>Vapi – Silvassa – Daman इंडस्ट्रियल बेल्ट के लिए ट्रस्टेड सपोर्ट</span></li>
+      </ul>
+    </section>
+
+    <footer>
+      © {year} Durga Enterprise, Chanod – Vapi. सर्वाधिकार सुरक्षित.
+    </footer>
+  </div>
+  <script>
+    // Footer में automatic साल सेट करें
+    document.body.innerHTML = document.body.innerHTML.replace('{year}', new Date().getFullYear());
+  </script>
+</body>
+</html>
